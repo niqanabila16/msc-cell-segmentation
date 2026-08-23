@@ -33,11 +33,9 @@
 
 ### Experiment Process Flow
 
-`[IMAGE: Gambar IV.11 — Alur Proses APE (flowchart), p.154]`
-→ save as: `assets/alur_proses_ape.png`
+![APE MSC Flowchart](/ape_msc/assets/alur_proses_ape.jpg)
 
-*(Source: Bab IV.9.2, `_Laporan_TA_final.pdf`)*
-
+![Eksperimen penelitian Flowchart](/ape_msc/assets/alur_proses_eksperimen.jpg)
 ---
 
 <h2 id="about-ape-msc">About APE MSC</h2>
@@ -78,60 +76,60 @@ Per Bab IV.9.2:
 
 <div align="center">
 
-![APE MSC Dashboard](assets/Dahboard.png)
+![APE MSC Dashboard](/ape_msc/assets/dashboard.png)
 
 *Main dashboard*
 
-![Segmentation result with GT](assets/hasil_segmentasi_citra_GT.png)
+![Segmentation result with GT](/ape_msc/assets/hasil_segmentasi_citra_GT.png)
 
 *Inference result with a ground truth label — Original \| GT \| Prediction \| TP/FP/FN Overlay*
 
-![Segmentation result without GT](assets/hasil_segmentasi_citra_noGT.png)
+![Segmentation result without GT](/ape_msc/assets/hasil_segmentasi_citra_noGT.png)
 
 *Inference result without a label — Original \| Prediction \| Overlay*
 
 </div>
-
-> **Naming note:** the filename `Dahboard.png` follows the path you gave me — double-check whether this is a typo for "Dashboard.png" before committing.
-
 ---
 
 <h2 id="research-results">Research Results</h2>
 
-Source: `_Laporan_TA_final.pdf`, Bab V (Hasil Eksperimen) and Bab V.9 (Pembahasan). Two datasets were used throughout: **phase-contrast** (main training/test data) and **non-phase-contrast** (generalization test).
+Source: `_Laporan_TA_final.pdf`, Bab V. Two datasets: **phase-contrast** (main data) and **non-phase-contrast** (generalization test).
 
-### Best Configuration
+### Phase-Contrast — Best Results
 
-| Image type | Model | Dice Coefficient | IoU |
-|---|---|---|---|
-| Phase-contrast | U-Net baseline | 0.8816 | 0.7909 |
-| Phase-contrast | **Final Model** (Gaussian Blur aug + ResNet50 encoder + AFpM decoder + AdamN optimizer) | **0.8988** | **0.8185** |
-| Non-phase-contrast | U-Net baseline | 0.0039 | 0.0020 |
-| Non-phase-contrast | Final Model + Polynomial Background Correction (order 3) | 0.5726 | 0.4254 |
+| Configuration | Dice | IoU |
+|---|---|---|
+| Baseline U-Net | 0.8816 | 0.7909 |
+| + Best augmentation (Gaussian Blur) | 0.8885 | 0.8020 |
+| + Best encoder (ResNet50, paper config) | 0.8901 | 0.8041 |
+| + Best optimizer (AdamN, paper config) | 0.8951 | 0.8128 |
+| + Best activation function (AFpM, paper config) | 0.8961 | 0.8141 |
+| **Final Model (Decoder)** — all four combined | **0.8988** | **0.8185** |
 
-`[IMAGE: Table V.6 — Final Model results, p.197]`
-→ save as: `assets/table_final_model.png`
+**Final Model (Decoder)** is the best result overall on phase-contrast — it beats the baseline and every individual ablation.
 
-### Ablation Studies
+### Non-Phase-Contrast — Best Results
 
-- **Data augmentation** (7 techniques: random flip, low-resolution, gamma, brightness, contrast, Gaussian blur, Gaussian noise). Best on phase-contrast: Gaussian Blur, only a small gain since the baseline was already accurate. On non-phase-contrast, only the **luminosity/intensity-related** techniques (low-resolution, gamma, brightness) improved results — flip, blur, and noise did not. This indicates the model's generalization gap is driven by lighting/contrast mismatch, not orientation.
-- **Encoder** (default vs. ResNet50). Swapping to ResNet50 with unchanged training config did *not* beat baseline — it only helped once paired with its recommended (paper) optimizer config. Architecture change alone wasn't sufficient without matching optimization settings.
-- **Activation function** (ReLU vs. AFpM vs. Sb-PiPLU). AFpM (paper config) gave the best phase-contrast result, but collapsed on non-phase-contrast. Sb-PiPLU scored lower on phase-contrast but generalized comparatively better, especially with its own paper config.
-- **Optimizer** (RMSProp vs. AdamW vs. AdamN vs. MuSGD). None of the alternatives beat baseline under default hyperparameters — every one only helped after switching to its paper-recommended config. AdamN (paper config) gave the best phase-contrast result among optimizers.
+| Configuration | Dice | IoU |
+|---|---|---|
+| Baseline U-Net | 0.0039 | 0.0020 |
+| Final Model (Decoder), no preprocessing | 0.0626 | 0.0330 |
+| **Final Model (Decoder) + Polynomial Background Correction** | **0.5726** | **0.4254** |
 
-### Key Findings
+Preprocessing that reshapes non-phase-contrast images to look more like the phase-contrast training data is what drives generalization — Polynomial Background Correction gives the best non-phase-contrast result.
 
-- Combining the individually-best settings (Final Model) improved phase-contrast accuracy over baseline, but did **not** exceed the best single-component results (ResNet50-alone and AFpM-alone under their paper configs) — gains don't simply stack.
-- The Final Model without preprocessing does **not** generalize to non-phase-contrast and underperforms baseline there — not recommended for that domain on its own.
-- Preprocessing has opposite effects by domain: it *hurts* accuracy on phase-contrast (already well-matched to training data) but substantially *helps* non-phase-contrast, with Polynomial Background Correction closing most of the generalization gap.
+`[IMAGE: Table V.6 — Final Model results, p.197]` → save as `assets/table_final_model.png`
+`[IMAGE: Table V.7 — Preprocessing on Final Model, p.200]` → save as `assets/table_preprocessing_final_model.png`
 
-`[IMAGE: Table V.7 — Image preprocessing on the Final Model, p.200]`
-→ save as: `assets/table_preprocessing_final_model.png`
+### Ablation Notes
 
-> **⚠️ Inconsistencies found in the source document** — worth checking before you finalize:
-> 1. ResNet50 (paper config) accuracy is reported differently in two places: **Dice 0.8901 / IoU 0.8041** in Tabel V.3 (p.187) vs. **Dice 0.8983 / IoU 0.8183** in the V.9.2 discussion (p.243). I used the Tabel V.3 figures above.
-> 2. The Final Model's optimizer is named **AdamN** when the model is defined (V.3, V.9.5 first paragraph) but the *same* V.9.5 discussion later calls it **AdamW** when explaining the non-phase-contrast drop.
-> 3. V.9.5 states the Final Model's non-phase-contrast result as **Dice 0.0005 / IoU 0.0011**, but Tabel V.6 (p.197) lists **Dice 0.0626 / IoU 0.0330** for "Model Final Decoder" and **0.1704 / 0.1000** for "Model Final Decoder dan Encoder." I used the Tabel V.6 figures above.
+- **Augmentation:** on non-phase-contrast, only lighting-related techniques (low-resolution, gamma, brightness) helped — flip/blur/noise didn't.
+- **Encoder & optimizer:** only beat baseline when paired with their paper-recommended config; default hyperparameters weren't enough.
+
+> **⚠️ Inconsistencies in the source document** — worth fixing before you submit:
+> 1. "ResNet50, paper config" is reported as three different values across the thesis: Dice **0.8901**/IoU **0.8041** (Tabel V.3, p.187), Dice **0.8983**/IoU **0.8183** (V.9.2 text, p.243), Dice **0.8964**/IoU **0.8141** (V.9.5 text, p.248). I used Tabel V.3 above.
+> 2. V.9.5's prose claims the Final Model is "still below" ResNet50-alone and AFpM-alone — but the numbers in that same paragraph (0.8988/0.8185) are actually higher than both.
+> 3. V.9.5 also calls the Final Model's optimizer "AdamW" in one sentence after calling it "AdamN" everywhere else, and gives yet another non-phase-contrast figure (Dice 0.0005/IoU 0.0011) that doesn't match Tabel V.6's 0.0626/0.0330.
 
 ---
 
