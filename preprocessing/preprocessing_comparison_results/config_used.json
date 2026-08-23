@@ -1,0 +1,113 @@
+{
+  "dataset": {
+    "phase_images_dir": "D:\\Eksperimen TA\\msc-cell-segmentation\\preprocessing\\images-original-converted\\converted-images\\step2_padded\\train\\images",
+    "phase_masks_dir": "D:\\Eksperimen TA\\msc-cell-segmentation\\preprocessing\\images-original-converted\\converted-images\\step2_padded\\train\\masks",
+    "non_phase_images_dir": "D:\\Eksperimen TA\\msc-cell-segmentation\\preprocessing\\images-original-converted-non-phase-lazy\\images",
+    "non_phase_masks_dir": "D:\\Eksperimen TA\\msc-cell-segmentation\\preprocessing\\images-original-converted-non-phase-lazy\\masks"
+  },
+  "output": {
+    "root_dir": "D:\\Eksperimen TA\\msc-cell-segmentation\\preprocessing\\preprocessing_comparison_results",
+    "overwrite": false
+  },
+  "reference": {
+    "histogram_bins": 256,
+    "cdf_points": 256
+  },
+  "preprocessing": {
+    "save_npy": false,
+    "save_png": true,
+    "save_tiff": false,
+    "histogram_matching": true,
+    "histogram_reference": "phase_reference",
+    "contrast_rescale_percentiles": [
+      1.0,
+      99.0
+    ],
+    "rgb_mode": "grayscale_repeat"
+  },
+  "evaluation": {
+    "use_masks_if_available": true,
+    "patch_size": 32,
+    "edge_sigma": 1.5,
+    "edge_dilation": 1,
+    "composite_weights": {
+      "intensity": 0.35,
+      "structure": 0.35,
+      "mask_contrast": 0.2,
+      "artifact_penalty": 0.1
+    }
+  },
+  "sweeps": {
+    "gaussian_background": {
+      "sigmas": [
+        10,
+        20,
+        30,
+        40
+      ],
+      "subtract_mode": "subtract"
+    },
+    "morphological_opening": {
+      "radii": [
+        15,
+        25,
+        35,
+        50
+      ],
+      "subtract_mode": "subtract"
+    },
+    "rolling_ball": {
+      "radii": [
+        150
+      ],
+      "subtract_mode": "subtract",
+      "use_histogram_matching": [
+        false,
+        true
+      ]
+    },
+    "polynomial_fit": {
+      "orders": [
+        2,
+        3
+      ],
+      "robust": true,
+      "sigma_clip": 2.5,
+      "max_iters": 5,
+      "subtract_mode": "subtract"
+    },
+    "basicpy": {
+      "fitting_modes": [
+        "approximate"
+      ],
+      "get_darkfield": [
+        false
+      ],
+      "smoothness_flatfield": [
+        1.0
+      ],
+      "epsilon": [
+        0.1
+      ],
+      "autosegment": [
+        true
+      ],
+      "autosegment_margin": [
+        10
+      ],
+      "max_iterations": [
+        250
+      ],
+      "max_reweight_iterations": [
+        8
+      ],
+      "max_reweight_iterations_baseline": [
+        5
+      ],
+      "use_histogram_matching": [
+        false
+      ],
+      "model_cache_dirname": ".basicpy_models"
+    }
+  }
+}

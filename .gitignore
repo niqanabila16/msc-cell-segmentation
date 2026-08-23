@@ -1,0 +1,55 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+
+# ZIP archives
+*.zip
+
+# Virtual environment
+.venv/
+venv/
+.env
+
+# =========================
+# Data & Output
+# =========================
+data/
+dataset/
+datasets/
+splitted_dataset_80_20/
+outputs/
+results/
+logs/
+
+# Models
+models/
+*.pth
+*.pt
+*.h5
+*.ckpt
+
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =========================
+# Misc
+# =========================
+*.log
+*.tmp
+
+.git_backup/

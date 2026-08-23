@@ -1,0 +1,3 @@
+[server]
+# Mengubah batas maksimal di antarmuka (UI) Streamlit menjadi 10 MB
+maxUploadSize = 10

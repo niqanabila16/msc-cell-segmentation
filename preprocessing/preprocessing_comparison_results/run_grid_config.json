@@ -1,0 +1,57 @@
+{
+  "run_grid": [
+    {
+      "method": "none",
+      "params": {},
+      "clahe": false,
+      "clahe_params": null,
+      "hist_match": false
+    },
+    {
+      "method": "gaussian",
+      "params": {
+        "sigma": 25
+      },
+      "clahe": false,
+      "clahe_params": null,
+      "hist_match": false
+    },
+    {
+      "method": "morphological_opening",
+      "params": {
+        "radius": 25
+      },
+      "clahe": false,
+      "clahe_params": null,
+      "hist_match": false
+    },
+    {
+      "method": "rolling_ball",
+      "params": {
+        "radius": 50
+      },
+      "clahe": false,
+      "clahe_params": null,
+      "hist_match": false
+    },
+    {
+      "method": "polynomial",
+      "params": {
+        "order": 2,
+        "background_percentile": 40
+      },
+      "clahe": false,
+      "clahe_params": null,
+      "hist_match": false
+    },
+    {
+      "method": "basic",
+      "params": {},
+      "clahe": false,
+      "clahe_params": null,
+      "hist_match": false
+    }
+  ],
+  "n_runs": 6,
+  "n_images": 2
+}

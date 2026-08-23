@@ -1,0 +1,596 @@
+[
+  {
+    "variant_name": "gaussian_background__v1__hm_1",
+    "method": "gaussian_background",
+    "params": {
+      "sigmas": 10,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "gaussian_background__v2__hm_1",
+    "method": "gaussian_background",
+    "params": {
+      "sigmas": 20,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "gaussian_background__v3__hm_1",
+    "method": "gaussian_background",
+    "params": {
+      "sigmas": 30,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "gaussian_background__v4__hm_1",
+    "method": "gaussian_background",
+    "params": {
+      "sigmas": 40,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "morphological_opening__v1__hm_1",
+    "method": "morphological_opening",
+    "params": {
+      "radii": 15,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "morphological_opening__v2__hm_1",
+    "method": "morphological_opening",
+    "params": {
+      "radii": 25,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "morphological_opening__v3__hm_1",
+    "method": "morphological_opening",
+    "params": {
+      "radii": 35,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "morphological_opening__v4__hm_1",
+    "method": "morphological_opening",
+    "params": {
+      "radii": 50,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "rolling_ball__v1__hm_0",
+    "method": "rolling_ball",
+    "params": {
+      "radii": 50,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "rolling_ball__v2__hm_1",
+    "method": "rolling_ball",
+    "params": {
+      "radii": 50,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "rolling_ball__v3__hm_0",
+    "method": "rolling_ball",
+    "params": {
+      "radii": 75,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "rolling_ball__v4__hm_1",
+    "method": "rolling_ball",
+    "params": {
+      "radii": 75,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "rolling_ball__v5__hm_0",
+    "method": "rolling_ball",
+    "params": {
+      "radii": 100,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "rolling_ball__v6__hm_1",
+    "method": "rolling_ball",
+    "params": {
+      "radii": 100,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "rolling_ball__v7__hm_0",
+    "method": "rolling_ball",
+    "params": {
+      "radii": 125,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "rolling_ball__v8__hm_1",
+    "method": "rolling_ball",
+    "params": {
+      "radii": 125,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "rolling_ball__v9__hm_0",
+    "method": "rolling_ball",
+    "params": {
+      "radii": 150,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "rolling_ball__v10__hm_1",
+    "method": "rolling_ball",
+    "params": {
+      "radii": 150,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "polynomial_fit__v1__hm_1",
+    "method": "polynomial_fit",
+    "params": {
+      "orders": 2,
+      "robust": true,
+      "sigma_clip": 2.5,
+      "max_iters": 5,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "polynomial_fit__v2__hm_1",
+    "method": "polynomial_fit",
+    "params": {
+      "orders": 3,
+      "robust": true,
+      "sigma_clip": 2.5,
+      "max_iters": 5,
+      "subtract_mode": "subtract"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "basicpy__v1__hm_0",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "approximate",
+      "get_darkfield": false,
+      "smoothness_flatfield": 0.5,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "basicpy__v2__hm_1",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "approximate",
+      "get_darkfield": false,
+      "smoothness_flatfield": 0.5,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "basicpy__v3__hm_0",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "approximate",
+      "get_darkfield": false,
+      "smoothness_flatfield": 1.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "basicpy__v4__hm_1",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "approximate",
+      "get_darkfield": false,
+      "smoothness_flatfield": 1.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "basicpy__v5__hm_0",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "approximate",
+      "get_darkfield": false,
+      "smoothness_flatfield": 2.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "basicpy__v6__hm_1",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "approximate",
+      "get_darkfield": false,
+      "smoothness_flatfield": 2.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "basicpy__v7__hm_0",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "approximate",
+      "get_darkfield": true,
+      "smoothness_flatfield": 0.5,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "basicpy__v8__hm_1",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "approximate",
+      "get_darkfield": true,
+      "smoothness_flatfield": 0.5,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "basicpy__v9__hm_0",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "approximate",
+      "get_darkfield": true,
+      "smoothness_flatfield": 1.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "basicpy__v10__hm_1",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "approximate",
+      "get_darkfield": true,
+      "smoothness_flatfield": 1.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "basicpy__v11__hm_0",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "approximate",
+      "get_darkfield": true,
+      "smoothness_flatfield": 2.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "basicpy__v12__hm_1",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "approximate",
+      "get_darkfield": true,
+      "smoothness_flatfield": 2.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "basicpy__v13__hm_0",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "ladmap",
+      "get_darkfield": false,
+      "smoothness_flatfield": 0.5,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "basicpy__v14__hm_1",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "ladmap",
+      "get_darkfield": false,
+      "smoothness_flatfield": 0.5,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "basicpy__v15__hm_0",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "ladmap",
+      "get_darkfield": false,
+      "smoothness_flatfield": 1.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "basicpy__v16__hm_1",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "ladmap",
+      "get_darkfield": false,
+      "smoothness_flatfield": 1.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "basicpy__v17__hm_0",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "ladmap",
+      "get_darkfield": false,
+      "smoothness_flatfield": 2.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "basicpy__v18__hm_1",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "ladmap",
+      "get_darkfield": false,
+      "smoothness_flatfield": 2.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "basicpy__v19__hm_0",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "ladmap",
+      "get_darkfield": true,
+      "smoothness_flatfield": 0.5,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "basicpy__v20__hm_1",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "ladmap",
+      "get_darkfield": true,
+      "smoothness_flatfield": 0.5,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "basicpy__v21__hm_0",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "ladmap",
+      "get_darkfield": true,
+      "smoothness_flatfield": 1.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "basicpy__v22__hm_1",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "ladmap",
+      "get_darkfield": true,
+      "smoothness_flatfield": 1.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": true
+  },
+  {
+    "variant_name": "basicpy__v23__hm_0",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "ladmap",
+      "get_darkfield": true,
+      "smoothness_flatfield": 2.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": false
+  },
+  {
+    "variant_name": "basicpy__v24__hm_1",
+    "method": "basicpy",
+    "params": {
+      "fitting_modes": "ladmap",
+      "get_darkfield": true,
+      "smoothness_flatfield": 2.0,
+      "epsilon": 0.1,
+      "autosegment": true,
+      "autosegment_margin": 10,
+      "max_iterations": 250,
+      "max_reweight_iterations": 8,
+      "max_reweight_iterations_baseline": 5,
+      "model_cache_dirname": ".basicpy_models"
+    },
+    "histogram_matching": true
+  }
+]
