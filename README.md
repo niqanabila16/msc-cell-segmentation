@@ -126,11 +126,6 @@ Preprocessing that reshapes non-phase-contrast images to look more like the phas
 - **Augmentation:** on non-phase-contrast, only lighting-related techniques (low-resolution, gamma, brightness) helped — flip/blur/noise didn't.
 - **Encoder & optimizer:** only beat baseline when paired with their paper-recommended config; default hyperparameters weren't enough.
 
-> **⚠️ Inconsistencies in the source document** — worth fixing before you submit:
-> 1. "ResNet50, paper config" is reported as three different values across the thesis: Dice **0.8901**/IoU **0.8041** (Tabel V.3, p.187), Dice **0.8983**/IoU **0.8183** (V.9.2 text, p.243), Dice **0.8964**/IoU **0.8141** (V.9.5 text, p.248). I used Tabel V.3 above.
-> 2. V.9.5's prose claims the Final Model is "still below" ResNet50-alone and AFpM-alone — but the numbers in that same paragraph (0.8988/0.8185) are actually higher than both.
-> 3. V.9.5 also calls the Final Model's optimizer "AdamW" in one sentence after calling it "AdamN" everywhere else, and gives yet another non-phase-contrast figure (Dice 0.0005/IoU 0.0011) that doesn't match Tabel V.6's 0.0626/0.0330.
-
 ---
 
 <h2 id="overlay-colors">Overlay Colors</h2>

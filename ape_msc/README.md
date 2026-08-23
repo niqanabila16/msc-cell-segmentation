@@ -127,12 +127,6 @@ Source: `_Laporan_TA_final.pdf`, Bab V (Hasil Eksperimen) and Bab V.9 (Pembahasa
 
 `[IMAGE: Table V.7 — Image preprocessing on the Final Model, p.200]`
 → save as: `assets/table_preprocessing_final_model.png`
-
-> **⚠️ Inconsistencies found in the source document** — worth checking before you finalize:
-> 1. ResNet50 (paper config) accuracy is reported differently in two places: **Dice 0.8901 / IoU 0.8041** in Tabel V.3 (p.187) vs. **Dice 0.8983 / IoU 0.8183** in the V.9.2 discussion (p.243). I used the Tabel V.3 figures above.
-> 2. The Final Model's optimizer is named **AdamN** when the model is defined (V.3, V.9.5 first paragraph) but the *same* V.9.5 discussion later calls it **AdamW** when explaining the non-phase-contrast drop.
-> 3. V.9.5 states the Final Model's non-phase-contrast result as **Dice 0.0005 / IoU 0.0011**, but Tabel V.6 (p.197) lists **Dice 0.0626 / IoU 0.0330** for "Model Final Decoder" and **0.1704 / 0.1000** for "Model Final Decoder dan Encoder." I used the Tabel V.6 figures above.
-
 ---
 
 <h2 id="overlay-colors">Overlay Colors</h2>
