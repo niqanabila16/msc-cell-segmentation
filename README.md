@@ -29,17 +29,21 @@
 
 ---
 
+<div align="center">
+
 <h2 id="architecture-overview">Architecture Overview</h2>
 
 ### Experiment Process Flow
-<div align="center">
+
 
 ![APE MSC Flowchart](/ape_msc/assets/alur_proses_ape.jpg)
 
 
 ![Eksperimen penelitian Flowchart](/ape_msc/assets/alur_proses_eksperimen.jpg)
 
-<div>
+
+</div>
+
 ---
 
 <h2 id="about-ape-msc">About APE MSC</h2>
