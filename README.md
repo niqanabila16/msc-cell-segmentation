@@ -132,7 +132,7 @@ Preprocessing that reshapes non-phase-contrast images to look more like the phas
 
 ![Segmentation result of Final model Decoder](/ape_msc/assets/table_final_model.png)
 
-*Segmentation result of Final model Decoder — Original \| GT \| Prediction U-Net \| Prediction Final Model Decoder*
+*Segmentation result of Final model Decoder + pre-processing Polynomial orde 3 — Original \| GT \| Prediction U-Net \| Prediction Final Model Decoder + pre-processing Polynomial orde 3*
 
 ![Segmentation result of Final model Decoder + pre-processing](/ape_msc/assets/table_preprocessing_final_model.png)
 
