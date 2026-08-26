@@ -48,9 +48,9 @@
 
 <h2 id="about-ape-msc">About APE MSC</h2>
 
-APE (Aplikasi Pendukung Eksperimen) is a Streamlit application built to support MSC segmentation experiments. It has one main documented feature: run U-Net inference on microscopy images — with or without ground truth labels — and display accuracy metrics. *(Bab IV.9.1)*
+APE (Aplikasi Pendukung Eksperimen) is a Streamlit application built to support MSC segmentation experiments. It has one main documented feature: run U-Net inference on microscopy images — with or without ground truth labels — and display accuracy metrics. 
 
-Functional scope, per Tabel IV.3 (FR01–FR10):
+Functional scope:
 - Accept one or more microscopy images plus optional ground truth labels through the interface
 - Automatically match each image to its label by filename
 - Validate image (`.jpg/.jpeg/.png`) and label (`.png`) files, max 10 MB each
@@ -65,8 +65,6 @@ Functional scope, per Tabel IV.3 (FR01–FR10):
 ---
 
 <h2 id="usage--inference-flow">Usage — Inference Flow</h2>
-
-Per Bab IV.9.2:
 
 1. Upload one or more microscopy images — required, `.jpg/.jpeg/.png`, max 10 MB each. Upload matching ground truth labels — optional, `.png`, max 10 MB. Labels are matched automatically by filename (same name, or same name with a `_mask` suffix).
 2. Choose an image preprocessing option from the dropdown (optional).
@@ -101,7 +99,7 @@ Per Bab IV.9.2:
 
 <h2 id="research-results">Research Results</h2>
 
-Source: `_Laporan_TA_final.pdf`, Bab V. Two datasets: **phase-contrast** (main data) and **non-phase-contrast** (generalization test).
+Two datasets are employed: the phase-contrast dataset (used as the main data) and the non-phase-contrast dataset (used for generalization testing).
 
 ### Phase-Contrast — Best Results
 
@@ -146,8 +144,6 @@ Preprocessing that reshapes non-phase-contrast images to look more like the phas
 ---
 
 <h2 id="overlay-colors">Overlay Colors</h2>
-
-Confirmed by FR08 and Bab IV.9.2 step 7:
 
 | Color | Meaning |
 |-------|-------|
@@ -197,7 +193,7 @@ Confirmed by FR08 and Bab IV.9.2 step 7:
   <img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge" alt="Matplotlib" />
   <img src="https://img.shields.io/badge/Seaborn-3776AB?style=for-the-badge" alt="Seaborn" />
 </div>
-<p align="center"><i>Per Tabel IV.4 (PyTorch 2.10.0, OpenCV 4.13.0, scikit-image 0.25.2, Albumentations 2.0.8, NumPy 2.0.2, scikit-learn 1.8.0, Matplotlib 3.10.0, Seaborn 0.13.2)</i></p>
+<p align="center"><i>(PyTorch 2.10.0, OpenCV 4.13.0, scikit-image 0.25.2, Albumentations 2.0.8, NumPy 2.0.2, scikit-learn 1.8.0, Matplotlib 3.10.0, Seaborn 0.13.2)</i></p>
 
 ---
 
