@@ -32,10 +32,14 @@
 <h2 id="architecture-overview">Architecture Overview</h2>
 
 ### Experiment Process Flow
+<div align="center">
 
 ![APE MSC Flowchart](/ape_msc/assets/alur_proses_ape.jpg)
 
+
 ![Eksperimen penelitian Flowchart](/ape_msc/assets/alur_proses_eksperimen.jpg)
+
+<div>
 ---
 
 <h2 id="about-ape-msc">About APE MSC</h2>
@@ -76,17 +80,17 @@ Per Bab IV.9.2:
 
 <div align="center">
 
-![APE MSC Dashboard](/ape_msc/assets/dashboard.png)
-
 *Main dashboard*
 
-![Segmentation result with GT](/ape_msc/assets/hasil_segmentasi_citra_GT.png)
+![APE MSC Dashboard](/ape_msc/assets/dashboard.png)
 
 *Inference result with a ground truth label — Original \| GT \| Prediction \| TP/FP/FN Overlay*
 
-![Segmentation result without GT](/ape_msc/assets/hasil_segmentasi_citra_noGT.png)
+![Segmentation result with GT](/ape_msc/assets/hasil_segmentasi_citra_GT.png)
 
 *Inference result without a label — Original \| Prediction \| Overlay*
+
+![Segmentation result without GT](/ape_msc/assets/hasil_segmentasi_citra_noGT.png)
 
 </div>
 ---
@@ -117,6 +121,18 @@ Source: `_Laporan_TA_final.pdf`, Bab V. Two datasets: **phase-contrast** (main d
 | **Final Model (Decoder) + Polynomial Background Correction** | **0.5726** | **0.4254** |
 
 Preprocessing that reshapes non-phase-contrast images to look more like the phase-contrast training data is what drives generalization — Polynomial Background Correction gives the best non-phase-contrast result.
+
+<div align="center">
+
+*Segmentation result of Final model Decoder — Original \| GT \| Prediction U-Net \| Prediction Final Model Decoder*
+
+![Segmentation result of Final model Decoder](/ape_msc/assets/table_final_model.png)
+
+*Segmentation result of Final model Decoder — Original \| GT \| Prediction U-Net \| Prediction Final Model Decoder*
+
+![Segmentation result of Final model Decoder + pre-processing](/ape_msc/assets/table_preprocessing_final_model.png)
+
+</div>
 
 `[IMAGE: Table V.6 — Final Model results, p.197]` → save as `assets/table_final_model.png`
 `[IMAGE: Table V.7 — Preprocessing on Final Model, p.200]` → save as `assets/table_preprocessing_final_model.png`
