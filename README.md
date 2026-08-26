@@ -138,9 +138,6 @@ Preprocessing that reshapes non-phase-contrast images to look more like the phas
 
 </div>
 
-`[IMAGE: Table V.6 — Final Model results, p.197]` → save as `assets/table_final_model.png`
-`[IMAGE: Table V.7 — Preprocessing on Final Model, p.200]` → save as `assets/table_preprocessing_final_model.png`
-
 ### Ablation Notes
 
 - **Augmentation:** on non-phase-contrast, only lighting-related techniques (low-resolution, gamma, brightness) helped — flip/blur/noise didn't.
