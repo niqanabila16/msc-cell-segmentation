@@ -1,0 +1,1 @@
+{"images": [{"id": 1, "file_name": "sel_003.jpg", "height": 512, "width": 512}], "annotations": [{"id": 1, "image_id": 1, "segmentation": [[102.4, 409.6, 256.0, 102.4, 409.6, 409.6]]}]}

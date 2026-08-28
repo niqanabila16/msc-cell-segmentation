@@ -1,0 +1,9 @@
+# Dependensi khusus automation testing (terpisah dari requirements
+# proyek utama supaya tidak tercampur dengan dependensi model/inference).
+selenium>=4.20
+webdriver-manager>=4.0
+pytest>=7.4
+pytest-subtests>=0.11    # docs.pytest.org/en/stable/how-to/subtests.html
+pytest-html>=4.1          # opsional: laporan HTML satu-file, lihat README
+Pillow>=10.0
+numpy>=1.24
